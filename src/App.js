@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
+import Search from './components/Search';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
@@ -31,9 +33,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <Home books={this.state.books} handleChange={this.handleChange} />
-      </div>
+      <BrowserRouter>
+        <div className="app">
+          <Route exact path='/'>
+            <Home books={this.state.books} handleChange={this.handleChange} />
+          </Route>
+          <Route path='/search'>
+            <Search handleChange={this.handleChange} />
+          </Route>
+        </div>
+      </BrowserRouter>
     )
   }
 }

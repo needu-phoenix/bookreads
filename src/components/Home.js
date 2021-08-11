@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import * as BooksAPI from '../BooksAPI';
 import Shelf from './Shelf';
 
@@ -34,7 +35,9 @@ class Home extends Component {
               </div>
             </div>
             <div className="open-search">
-              <button>Add a book</button>
+              <Link to='/search'>
+                <button>Add a book</button>
+              </Link>
             </div>
         </div>
     )
