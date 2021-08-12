@@ -3,10 +3,7 @@ import React, {Component} from "react";
 class Books extends Component {
     render() {
         let {books} = this.props;
-        let renderedBooks = [];
-
-        if(Array.isArray(renderedBooks) && renderedBooks.length > 1) {
-            renderedBooks = books.map(book => {
+        let renderedBooks  = books.map(book => {
                 return (
                     <li key={book.id}>
                         <div className="book">
@@ -26,7 +23,6 @@ class Books extends Component {
                     </li>
                 )
             })
-        }
 
         return (
             <ol className="books-grid">

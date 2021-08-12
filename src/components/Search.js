@@ -24,7 +24,7 @@ class Search extends Component {
     handleChange(book,shelfName){
         book.shelf = shelfName;
         BooksAPI.update(book,shelfName)
-            .then(book => this.props.handleChange())
+            .then(book => {this.props.handleChange()})
     }
 
     render() {
